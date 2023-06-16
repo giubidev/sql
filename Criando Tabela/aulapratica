@@ -1,0 +1,76 @@
+# Criando Tabela
+
+**Propriedade UNSIGNED:** Não permite sinal no número. Por isso o conjunto de valores válidos aumentam.
+
+### Ponto Flutuante:
+
+FLOAT: Precisão simples (4 bytes)
+
+DOUBLE: Precisão dupla (8 bytes)
+
+Exemplo: Se declaramos um campo FLOAT(7,4) se incluímos o número 9999,000009 o valor armazenado será 999,0001
+
+- Se quiser ter uma precisão mt exata nos cálculos, usar o DOUBLE
+- FLOAT(7,4) 7 digítos e 4 casas decimais
+
+### Decimal Fixo
+
+- Tamanho: Até 65 dígitos
+- Especificamos o número de dígito e o número de casas decimais
+- Exemplo: Se declaramos um campo DECIMAL(5,2) iremos poder armazenarvalores somente entre -999,99 e 999,99
+- Número máximo de dígitos são 65
+
+### BIT
+
+- Tamanho: até 64 bits
+- Exemplo: BIT(1) - Pode ser 1 ou 0
+- BIT(2) - pode ser 01, 10, 00, 11
+
+# Atributos dos campos numéricos:
+
+- SIGNED ou UNSIGNED - Vai possuir ou não sinal no número
+- ZEROFILL - Preenche com Zeros os espaços:
+    - Exemplos: INT(4). Se armazenarmos o valor 5 será gravado 0005
+- AUTO_INCREMENT - Sequência auto incrementada
+    - Exemplo: 1, 2, 3, 4, 5 …..
+- Erros de OUT OF RANGE: vão ocorrer quando os valores estourarem os limites
+
+## Data e Hora
+
+- DATE: 1000-01-01 até 9999-12-31
+- DATETIME: 1000-01-01 00:00:00 até 9999-12-31 23:59:59
+- TIMESTAMP: 1970-01-01 00:00:01 UTC até 2038-01-19 UTC
+- TIME: 838:59:59 e 839:59:59
+- YEAR: 1901 - 2155 (Pode ser expresso no formato 2 ou 4 dígitos)
+
+## STRINGS
+
+- CHAR: Cadeia de caracteres com valor fixo (de 0 a 255)
+- VARCHAR: Cadeia de caracteres com valor variado (de 0 a 255)
+- CHAR(4) - “aa” - “  aa” (grava os espaços colocado e coloca em branco)
+- VARCHAR(4) - “aa” - “aa”
+- BINARY: Cadeia de caracteres com valor fixo (de 0 a 255). Expressos em Binário
+- VARBINAY: Cadeia de caracteres com valor variado (de 0 a 255). Expressos em Binário
+- BLOB: Binário longo. Pode ter:
+    - TINYBLOB
+    - BLOB
+    - MEDIUMBLOB
+    - LONGBLOB
+- TEXT: Texto longo
+    - TINYTEXT
+    - TEXT
+    - MEDIUMTEXT
+    - LONGTEXT
+- ENUM: Permite armazenar uma lista pré-definida de valores
+    - Exemplo: Size ENUM(’x-small’, ‘small’, ‘medium’, ‘large’, ‘x-large’)
+
+### Atributos dos campos String
+
+- SET e COLLATE - Que tipo de conjunto de caracteres serão suportados
+
+## Campos Spacial
+
+- GEOMETRY
+- POINT
+- LNESTRING
+- POLYGON
